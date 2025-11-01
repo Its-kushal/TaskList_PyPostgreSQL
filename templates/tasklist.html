@@ -6,6 +6,18 @@
     <title>Task List</title>
 </head>
 <body>
-    <p>Task List</p>
+    <!-- <p>Task List</p> -->
+    <table>
+        <tr>
+            <th>Tasks</th>
+            <th>Is Completed</th>
+        </tr>
+        {% for task in tasklist: %}
+            <tr>
+                <td>{{task[0]}}</td>
+                <td>{{task[1]}}</td>
+            </tr>
+        {% endfor %}
+    </table>
 </body>
 </html>
