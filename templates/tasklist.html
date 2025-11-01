@@ -6,16 +6,23 @@
     <title>Task List</title>
 </head>
 <body>
-    <!-- <p>Task List</p> -->
+    <h2>Task List</h2>
+    <form method="post" action="/add">
+        <input type="text" name="taskName">
+        <input type="text" name="dueDate">
+        <input type="submit" value="Add Task">
+    </form>
     <table>
         <tr>
             <th>Tasks</th>
+            <th>Due Date</th>
             <th>Is Completed</th>
         </tr>
         {% for task in tasklist: %}
             <tr>
                 <td>{{task[0]}}</td>
                 <td>{{task[1]}}</td>
+                <td>{{task[2]}}</td>
             </tr>
         {% endfor %}
     </table>
