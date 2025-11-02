@@ -20,9 +20,17 @@
         </tr>
         {% for task in tasklist: %}
             <tr>
-                <td>{{task[0]}}</td>
-                <td>{{task[1]}}</td>
-                <td>{{task[2]}}</td>
+                <form action="/update" method="post">
+                    <td>
+                        <input type="hidden" name="id" value="{{ task[0] }}">
+                        <input type="text" name="updateTask" value="{{ task[1] }}">
+                    </td>
+                    <td><input type="text" name="updateDate" value="{{ task[2] }}"></td>
+                    <td>{{task[3]}}</td>
+                    <td><input type="submit" name="saveOrDeleteOrComplete" value="update" /></td>
+                    <td><input type="submit" name="saveOrDeleteOrComplete" value="X" /></td>
+                    <td><input type="submit" name="saveOrDeleteOrComplete" value="complete" /></td>
+                </form>
             </tr>
         {% endfor %}
     </table>
